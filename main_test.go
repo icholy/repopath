@@ -37,6 +37,10 @@ func TestClonePath(t *testing.T) {
 			url:  "http://user@stash.company.com/scm/project/repo.git",
 			path: "stash.company.com/project/repo",
 		},
+		{
+			url:  "https://cs.opensource.google/go/x/tools/+/master:",
+			path: "cs.opensource.google/go/x/tools",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.url, func(t *testing.T) {

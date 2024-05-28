@@ -38,6 +38,10 @@ func clonePath(rawurl string) (string, error) {
 	if u.Host == "git.sr.ht" {
 		p = strings.TrimPrefix(p, "~")
 	}
+	// google opensource
+	if u.Host == "cs.opensource.google" {
+		p, _, _ = strings.Cut(p, "/+/")
+	}
 	// old bitbucket/stash
 	if u.Scheme == "http" || u.Scheme == "https" {
 		p = strings.TrimPrefix(p, "scm/")
